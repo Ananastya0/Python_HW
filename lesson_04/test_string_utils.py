@@ -56,8 +56,8 @@ def test_to_list_pozitive(input_text, delimeter, expected_output):
 @pytest.mark.parametrize(
     "input_text, delimeter, expected_output",
      [
-         ("", None, []),
-         ("1,2,3", None, ["1", "2", "3"])
+         ("", ",", []),
+         ("1,2,3", ",", ["1", "2", "3"])
     ],)
 
 def test_to_list_negative(input_text, delimeter, expected_output):
@@ -178,7 +178,7 @@ def test_list_to_string_pozitive(input_text, joiner, expected_output):
 
 @pytest.mark.parametrize(
     "input_text, joiner, expected_output",
-    [(["123"], ", ", ["12"]), (["1", "b"], ", ", ["1", "с"])])
+    [(["1", "2"], ", ", "1,2"), (["a", "b"], ", ", "a,b")])
 
 def test_list_to_string_negative(input_text, joiner, expected_output):
     string = StringUtils()
