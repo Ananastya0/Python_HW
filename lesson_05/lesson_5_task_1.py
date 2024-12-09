@@ -1,11 +1,10 @@
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Chrome()
 driver.get("http://the-internet.herokuapp.com/add_remove_elements/")
-for _ in range (5):
+for _ in range(5):
     driver.find_element(By.XPATH, "//button[text()='Add Element']").click()
     sleep(2)
 

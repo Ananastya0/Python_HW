@@ -1,5 +1,4 @@
 from selenium import webdriver
-from time import sleep
 from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
@@ -9,4 +8,4 @@ driver.find_element(By.XPATH, "//button[text()='Button with Dynamic ID']").click
 
 driver.quit()
 
-#код одинаково отработал 3 раза
+# код одинаково отработал 3 раза
