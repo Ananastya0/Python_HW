@@ -5,9 +5,11 @@ from selenium.webdriver.common.by import By
 
 
 driver = webdriver.Chrome()
-driver.get("https://bonigarcia.dev/selenium-webdriver-java/loading-images.html")
+driver.get("http://uitestingplayground.com/ajax")
 
-wait = WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.ID, "award")))
-print(driver.find_element(By.ID, "award").get_dom_attribute("src"))
+driver.find_element(By.ID, "ajaxButton").click()
+wait = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CLASS_NAME, "bg-success")))
+print(wait.text)
+
 
 driver.quit()
