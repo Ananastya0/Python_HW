@@ -7,7 +7,7 @@ class YouGile:
         self.base_url = base_url
         self.headers = headers
 
-    def auth_token(self, login = 'a.kovalyova98@gmail.com', password = 'Service_038'):
+    def auth_token(self, login = '', password = ''):
         creds = {
             'login': login,
             'password': password
