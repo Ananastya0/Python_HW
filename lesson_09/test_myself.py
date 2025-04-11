@@ -13,10 +13,10 @@ def test_db_connection():
 
 def test_create_employee():
     connection = db.connect()
-    transation = connection.begin()
+    transaсtion = connection.begin()
     sql = text('INSERT INTO users (user_id, user_email, subject_id) VALUES(:user_id, :user_email, :subject_id)')
     connection.execute(sql, {'user_id': 66087, 'user_email': 'sobaka@mail.ru', 'subject_id': 3})
-    transation.commit()
+    transaсtion.commit()
     check_sql = text('SELECT * FROM users WHERE user_id = :user_id')
     result = connection.execute(check_sql, {'user_id': 66087}).fetchone()
     assert result is not None
@@ -24,10 +24,10 @@ def test_create_employee():
 
 def test_update_employee():
     connection = db.connect()
-    transation = connection.begin()
+    transaсtion = connection.begin()
     sql = text('UPDATE users SET user_email = :user_email WHERE user_id = :user_id')
     connection.execute(sql, {'user_email': 'koshka@mail.ru', 'user_id': 66087})
-    transation.commit()
+    transaсtion.commit()
     check_sql = text('SELECT * FROM users WHERE user_email = :user_email')
     result = connection.execute(check_sql, {'user_email': 'koshka@mail.ru'}).fetchone()
     assert result is not None
@@ -35,10 +35,10 @@ def test_update_employee():
 
 def test_delete_employee():
     connection = db.connect()
-    transation = connection.begin()
+    transaсtion = connection.begin()
     sql = text('DELETE FROM users WHERE user_id = :user_id')
     connection.execute(sql, {'user_id': 66087})
-    transation.commit()
+    transaсtion.commit()
     check_sql = text('SELECT * FROM users WHERE user_id = :user_id')
     result = connection.execute(check_sql, {'user_id': 66087}).fetchone()
     assert result is None
